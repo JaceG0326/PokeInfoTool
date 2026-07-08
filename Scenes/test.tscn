@@ -20,6 +20,7 @@ theme_override_constants/margin_bottom = 16
 
 [node name="BaseStatsPanel" type="PanelContainer" parent="UI/PokeInfoContainer" unique_id=1058575653]
 layout_mode = 2
+size_flags_horizontal = 0
 
 [node name="BaseStatsVBox" type="VBoxContainer" parent="UI/PokeInfoContainer/BaseStatsPanel" unique_id=51204262]
 layout_mode = 2
@@ -47,16 +48,102 @@ layout_mode = 2
 [node name="SPD" type="Label" parent="UI/PokeInfoContainer/BaseStatsPanel/BaseStatsVBox" unique_id=1713263824]
 layout_mode = 2
 
-[node name="GeneralDataPanel" type="PanelContainer" parent="UI/PokeInfoContainer" unique_id=2104707104]
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/PokeInfoContainer" unique_id=894978654]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="GeneralDataPanel" type="PanelContainer" parent="UI/PokeInfoContainer/VBoxContainer" unique_id=2104707104]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="GeneralDataVBox" type="VBoxContainer" parent="UI/PokeInfoContainer/VBoxContainer/GeneralDataPanel" unique_id=1295642790]
 layout_mode = 2
 
-[node name="GeneralDataVBox" type="VBoxContainer" parent="UI/PokeInfoContainer/GeneralDataPanel" unique_id=1295642790]
+[node name="TypeEffectivenessPanel" type="PanelContainer" parent="UI/PokeInfoContainer/VBoxContainer" unique_id=2045490035]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="TypeEffectivenessVBox" type="VBoxContainer" parent="UI/PokeInfoContainer/VBoxContainer/TypeEffectivenessPanel" unique_id=827545573]
 layout_mode = 2
 
-[node name="TypeEffectivenessPanel" type="PanelContainer" parent="UI/PokeInfoContainer" unique_id=2045490035]
+[node name="Header" type="Label" parent="UI/PokeInfoContainer/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox" unique_id=579200862]
+layout_mode = 2
+text = "Type Effectiveness"
+
+[node name="TypeChartGrid" type="GridContainer" parent="UI/PokeInfoContainer/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox" unique_id=441777597]
+layout_mode = 2
+columns = 9
+
+[node name="Normal" type="ColorRect" parent="UI/PokeInfoContainer/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=2050720986]
+custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 
-[node name="TypeEffectivenessVBox" type="VBoxContainer" parent="UI/PokeInfoContainer/TypeEffectivenessPanel" unique_id=827545573]
+[node name="Fire" type="ColorRect" parent="UI/PokeInfoContainer/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=994566309]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="Water" type="ColorRect" parent="UI/PokeInfoContainer/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=1742739027]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="Electric" type="ColorRect" parent="UI/PokeInfoContainer/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=625912763]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="Grass" type="ColorRect" parent="UI/PokeInfoContainer/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=820225696]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="Ice" type="ColorRect" parent="UI/PokeInfoContainer/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=1282615778]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="Fighting" type="ColorRect" parent="UI/PokeInfoContainer/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=553460633]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="Poison" type="ColorRect" parent="UI/PokeInfoContainer/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=140787951]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="Ground" type="ColorRect" parent="UI/PokeInfoContainer/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=1816632760]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="Flying" type="ColorRect" parent="UI/PokeInfoContainer/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=600848061]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="Psychic" type="ColorRect" parent="UI/PokeInfoContainer/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=1459791223]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="Bug" type="ColorRect" parent="UI/PokeInfoContainer/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=833294059]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="Rock" type="ColorRect" parent="UI/PokeInfoContainer/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=2020064298]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="Ghost" type="ColorRect" parent="UI/PokeInfoContainer/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=1695226975]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="Dragon" type="ColorRect" parent="UI/PokeInfoContainer/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=687623900]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="Dark" type="ColorRect" parent="UI/PokeInfoContainer/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=2014734125]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="Steel" type="ColorRect" parent="UI/PokeInfoContainer/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=436169188]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="Fairy" type="ColorRect" parent="UI/PokeInfoContainer/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=1604103569]
+custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 
 [node name="HTTPRequest" type="HTTPRequest" parent="." unique_id=1391247772]
