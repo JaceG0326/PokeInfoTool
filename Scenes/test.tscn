@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://3m4qdsdgqqp6"]
+
+[ext_resource type="Script" uid="uid://dmvpmgxnrvrvs" path="res://Scripts/API/api_handler.gd" id="1_lc1oi"]
+
+[node name="Node" type="Node" unique_id=730165891]
+script = ExtResource("1_lc1oi")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1831868283]
+
+[node name="PokeInfoContainer" type="MarginContainer" parent="UI" unique_id=478319935]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HTTPRequest" type="HTTPRequest" parent="." unique_id=1391247772]
+
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_request_completed"]
