@@ -13,6 +13,51 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="BaseStatsPanel" type="PanelContainer" parent="UI/PokeInfoContainer" unique_id=1058575653]
+layout_mode = 2
+
+[node name="BaseStatsVBox" type="VBoxContainer" parent="UI/PokeInfoContainer/BaseStatsPanel" unique_id=51204262]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Header" type="Label" parent="UI/PokeInfoContainer/BaseStatsPanel/BaseStatsVBox" unique_id=227871020]
+layout_mode = 2
+text = "Base Stats"
+
+[node name="HP" type="Label" parent="UI/PokeInfoContainer/BaseStatsPanel/BaseStatsVBox" unique_id=449748845]
+layout_mode = 2
+
+[node name="ATK" type="Label" parent="UI/PokeInfoContainer/BaseStatsPanel/BaseStatsVBox" unique_id=598176072]
+layout_mode = 2
+
+[node name="DEF" type="Label" parent="UI/PokeInfoContainer/BaseStatsPanel/BaseStatsVBox" unique_id=1770607263]
+layout_mode = 2
+
+[node name="SP_ATK" type="Label" parent="UI/PokeInfoContainer/BaseStatsPanel/BaseStatsVBox" unique_id=1676036909]
+layout_mode = 2
+
+[node name="SP_DEF" type="Label" parent="UI/PokeInfoContainer/BaseStatsPanel/BaseStatsVBox" unique_id=1626920926]
+layout_mode = 2
+
+[node name="SPD" type="Label" parent="UI/PokeInfoContainer/BaseStatsPanel/BaseStatsVBox" unique_id=1713263824]
+layout_mode = 2
+
+[node name="GeneralDataPanel" type="PanelContainer" parent="UI/PokeInfoContainer" unique_id=2104707104]
+layout_mode = 2
+
+[node name="GeneralDataVBox" type="VBoxContainer" parent="UI/PokeInfoContainer/GeneralDataPanel" unique_id=1295642790]
+layout_mode = 2
+
+[node name="TypeEffectivenessPanel" type="PanelContainer" parent="UI/PokeInfoContainer" unique_id=2045490035]
+layout_mode = 2
+
+[node name="TypeEffectivenessVBox" type="VBoxContainer" parent="UI/PokeInfoContainer/TypeEffectivenessPanel" unique_id=827545573]
+layout_mode = 2
 
 [node name="HTTPRequest" type="HTTPRequest" parent="." unique_id=1391247772]
 
