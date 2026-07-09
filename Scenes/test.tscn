@@ -18,131 +18,244 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="BaseStatsPanel" type="PanelContainer" parent="UI/PokeInfoContainer" unique_id=1058575653]
+[node name="PokeInfoHBox" type="HBoxContainer" parent="UI/PokeInfoContainer" unique_id=7938203]
+layout_mode = 2
+
+[node name="BaseStatsPanel" type="PanelContainer" parent="UI/PokeInfoContainer/PokeInfoHBox" unique_id=1058575653]
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="BaseStatsVBox" type="VBoxContainer" parent="UI/PokeInfoContainer/BaseStatsPanel" unique_id=51204262]
+[node name="BaseStatsVBox" type="VBoxContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/BaseStatsPanel" unique_id=51204262]
+custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
 size_flags_horizontal = 8
 
-[node name="Header" type="Label" parent="UI/PokeInfoContainer/BaseStatsPanel/BaseStatsVBox" unique_id=227871020]
+[node name="Header" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/BaseStatsPanel/BaseStatsVBox" unique_id=227871020]
 layout_mode = 2
 text = "Base Stats"
+horizontal_alignment = 1
 
-[node name="HP" type="Label" parent="UI/PokeInfoContainer/BaseStatsPanel/BaseStatsVBox" unique_id=449748845]
+[node name="HP" type="HBoxContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/BaseStatsPanel/BaseStatsVBox" unique_id=431510563]
 layout_mode = 2
+alignment = 1
 
-[node name="ATK" type="Label" parent="UI/PokeInfoContainer/BaseStatsPanel/BaseStatsVBox" unique_id=598176072]
+[node name="Label" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/BaseStatsPanel/BaseStatsVBox/HP" unique_id=1379301755]
+custom_minimum_size = Vector2(64, 32)
 layout_mode = 2
+text = "HP"
+horizontal_alignment = 2
+vertical_alignment = 1
 
-[node name="DEF" type="Label" parent="UI/PokeInfoContainer/BaseStatsPanel/BaseStatsVBox" unique_id=1770607263]
+[node name="Stat" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/BaseStatsPanel/BaseStatsVBox/HP" unique_id=449748845]
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
+text = "000"
+horizontal_alignment = 2
+vertical_alignment = 1
 
-[node name="SP_ATK" type="Label" parent="UI/PokeInfoContainer/BaseStatsPanel/BaseStatsVBox" unique_id=1676036909]
+[node name="ATK" type="HBoxContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/BaseStatsPanel/BaseStatsVBox" unique_id=2039697133]
 layout_mode = 2
+alignment = 1
 
-[node name="SP_DEF" type="Label" parent="UI/PokeInfoContainer/BaseStatsPanel/BaseStatsVBox" unique_id=1626920926]
+[node name="Label" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/BaseStatsPanel/BaseStatsVBox/ATK" unique_id=509881853]
+custom_minimum_size = Vector2(64, 32)
 layout_mode = 2
+text = "Attack"
+horizontal_alignment = 2
+vertical_alignment = 1
 
-[node name="SPD" type="Label" parent="UI/PokeInfoContainer/BaseStatsPanel/BaseStatsVBox" unique_id=1713263824]
+[node name="Stat" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/BaseStatsPanel/BaseStatsVBox/ATK" unique_id=412590989]
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
+text = "000"
+horizontal_alignment = 2
+vertical_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/PokeInfoContainer" unique_id=894978654]
+[node name="DEF" type="HBoxContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/BaseStatsPanel/BaseStatsVBox" unique_id=1815240189]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/BaseStatsPanel/BaseStatsVBox/DEF" unique_id=2142953620]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 2
+text = "Defense"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Stat" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/BaseStatsPanel/BaseStatsVBox/DEF" unique_id=1409953035]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+text = "000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SpATK" type="HBoxContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/BaseStatsPanel/BaseStatsVBox" unique_id=402123477]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/BaseStatsPanel/BaseStatsVBox/SpATK" unique_id=1941808638]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 2
+text = "Sp. Atk"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Stat" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/BaseStatsPanel/BaseStatsVBox/SpATK" unique_id=1215736277]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+text = "000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SpDEF" type="HBoxContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/BaseStatsPanel/BaseStatsVBox" unique_id=630495184]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/BaseStatsPanel/BaseStatsVBox/SpDEF" unique_id=780720648]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 2
+text = "Sp. Def"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Stat" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/BaseStatsPanel/BaseStatsVBox/SpDEF" unique_id=755843846]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+text = "000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SPEED" type="HBoxContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/BaseStatsPanel/BaseStatsVBox" unique_id=699767564]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/BaseStatsPanel/BaseStatsVBox/SPEED" unique_id=452878298]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 2
+text = "Speed"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Stat" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/BaseStatsPanel/BaseStatsVBox/SPEED" unique_id=1011451091]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+text = "000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TOTAL" type="HBoxContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/BaseStatsPanel/BaseStatsVBox" unique_id=1322276757]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/BaseStatsPanel/BaseStatsVBox/TOTAL" unique_id=244545402]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 2
+text = "Total"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Stat" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/BaseStatsPanel/BaseStatsVBox/TOTAL" unique_id=1221893399]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+text = "000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/PokeInfoContainer/PokeInfoHBox" unique_id=894978654]
 layout_mode = 2
 size_flags_horizontal = 8
 
-[node name="GeneralDataPanel" type="PanelContainer" parent="UI/PokeInfoContainer/VBoxContainer" unique_id=2104707104]
+[node name="GeneralDataPanel" type="PanelContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer" unique_id=2104707104]
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="GeneralDataVBox" type="VBoxContainer" parent="UI/PokeInfoContainer/VBoxContainer/GeneralDataPanel" unique_id=1295642790]
+[node name="GeneralDataVBox" type="VBoxContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/GeneralDataPanel" unique_id=1295642790]
 layout_mode = 2
 
-[node name="TypeEffectivenessPanel" type="PanelContainer" parent="UI/PokeInfoContainer/VBoxContainer" unique_id=2045490035]
+[node name="TypeEffectivenessPanel" type="PanelContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer" unique_id=2045490035]
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="TypeEffectivenessVBox" type="VBoxContainer" parent="UI/PokeInfoContainer/VBoxContainer/TypeEffectivenessPanel" unique_id=827545573]
+[node name="TypeEffectivenessVBox" type="VBoxContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel" unique_id=827545573]
 layout_mode = 2
 
-[node name="Header" type="Label" parent="UI/PokeInfoContainer/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox" unique_id=579200862]
+[node name="Header" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox" unique_id=579200862]
 layout_mode = 2
 text = "Type Effectiveness"
 
-[node name="TypeChartGrid" type="GridContainer" parent="UI/PokeInfoContainer/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox" unique_id=441777597]
+[node name="TypeChartGrid" type="GridContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox" unique_id=441777597]
 layout_mode = 2
 columns = 9
 
-[node name="Normal" type="ColorRect" parent="UI/PokeInfoContainer/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=2050720986]
+[node name="Normal" type="ColorRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=2050720986]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 
-[node name="Fire" type="ColorRect" parent="UI/PokeInfoContainer/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=994566309]
+[node name="Fire" type="ColorRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=994566309]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 
-[node name="Water" type="ColorRect" parent="UI/PokeInfoContainer/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=1742739027]
+[node name="Water" type="ColorRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=1742739027]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 
-[node name="Electric" type="ColorRect" parent="UI/PokeInfoContainer/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=625912763]
+[node name="Electric" type="ColorRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=625912763]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 
-[node name="Grass" type="ColorRect" parent="UI/PokeInfoContainer/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=820225696]
+[node name="Grass" type="ColorRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=820225696]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 
-[node name="Ice" type="ColorRect" parent="UI/PokeInfoContainer/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=1282615778]
+[node name="Ice" type="ColorRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=1282615778]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 
-[node name="Fighting" type="ColorRect" parent="UI/PokeInfoContainer/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=553460633]
+[node name="Fighting" type="ColorRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=553460633]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 
-[node name="Poison" type="ColorRect" parent="UI/PokeInfoContainer/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=140787951]
+[node name="Poison" type="ColorRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=140787951]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 
-[node name="Ground" type="ColorRect" parent="UI/PokeInfoContainer/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=1816632760]
+[node name="Ground" type="ColorRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=1816632760]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 
-[node name="Flying" type="ColorRect" parent="UI/PokeInfoContainer/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=600848061]
+[node name="Flying" type="ColorRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=600848061]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 
-[node name="Psychic" type="ColorRect" parent="UI/PokeInfoContainer/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=1459791223]
+[node name="Psychic" type="ColorRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=1459791223]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 
-[node name="Bug" type="ColorRect" parent="UI/PokeInfoContainer/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=833294059]
+[node name="Bug" type="ColorRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=833294059]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 
-[node name="Rock" type="ColorRect" parent="UI/PokeInfoContainer/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=2020064298]
+[node name="Rock" type="ColorRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=2020064298]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 
-[node name="Ghost" type="ColorRect" parent="UI/PokeInfoContainer/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=1695226975]
+[node name="Ghost" type="ColorRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=1695226975]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 
-[node name="Dragon" type="ColorRect" parent="UI/PokeInfoContainer/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=687623900]
+[node name="Dragon" type="ColorRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=687623900]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 
-[node name="Dark" type="ColorRect" parent="UI/PokeInfoContainer/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=2014734125]
+[node name="Dark" type="ColorRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=2014734125]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 
-[node name="Steel" type="ColorRect" parent="UI/PokeInfoContainer/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=436169188]
+[node name="Steel" type="ColorRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=436169188]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 
-[node name="Fairy" type="ColorRect" parent="UI/PokeInfoContainer/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=1604103569]
+[node name="Fairy" type="ColorRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=1604103569]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 
