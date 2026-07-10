@@ -1,19 +1,769 @@
 [gd_scene format=3 uid="uid://3m4qdsdgqqp6"]
 
 [ext_resource type="Script" uid="uid://dmvpmgxnrvrvs" path="res://Scripts/API/api_handler.gd" id="1_lc1oi"]
+[ext_resource type="Texture2D" uid="uid://by7n7tutiqphr" path="res://Assets/type_icons.png" id="2_8od7v"]
+[ext_resource type="Script" uid="uid://vnfctql86fd3" path="res://Scripts/UI/ui.gd" id="2_35xla"]
+[ext_resource type="Script" uid="uid://cxtdun3ap68qx" path="res://addons/line_edit_autocomplete_plugin/line_edit_autocomplete.gd" id="3_5wyu1"]
+[ext_resource type="Script" uid="uid://ckgg5ous0cn1u" path="res://Scripts/UI/base_stats_panel.gd" id="3_i3aeo"]
+[ext_resource type="Script" uid="uid://bqi1wuswng3k3" path="res://Scripts/UI/type_effectiveness_panel.gd" id="4_5wyu1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_35xla"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.18039216, 0.18039216, 0.18039216, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qc4db"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.18039216, 0.18039216, 0.18039216, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lc1oi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8od7v"]
+bg_color = Color(0, 0.7607843, 0.72156864, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i3aeo"]
+bg_color = Color(0.9529412, 0.26666668, 0.26666668, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5wyu1"]
+bg_color = Color(0.9529412, 0.26666668, 0.26666668, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0c07c"]
+bg_color = Color(1, 0.8666667, 0.34117648, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2cgwh"]
+bg_color = Color(3.5616756e-06, 0.72062004, 0.32185158, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iaow0"]
+bg_color = Color(1, 0.49803922, 0.05882353, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ys1qc"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.18039216, 0.18039216, 0.18039216, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35xla"]
+atlas = ExtResource("2_8od7v")
+region = Rect2(0, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3aeo"]
+atlas = ExtResource("2_8od7v")
+region = Rect2(76, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8od7v"]
+atlas = ExtResource("2_8od7v")
+region = Rect2(114, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qc4db"]
+atlas = ExtResource("2_8od7v")
+region = Rect2(190, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ys1qc"]
+atlas = ExtResource("2_8od7v")
+region = Rect2(38, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wyu1"]
+atlas = ExtResource("2_8od7v")
+region = Rect2(0, 38, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0c07c"]
+atlas = ExtResource("2_8od7v")
+region = Rect2(152, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cgwh"]
+atlas = ExtResource("2_8od7v")
+region = Rect2(304, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iaow0"]
+atlas = ExtResource("2_8od7v")
+region = Rect2(76, 38, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpfo2"]
+atlas = ExtResource("2_8od7v")
+region = Rect2(228, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yb21e"]
+atlas = ExtResource("2_8od7v")
+region = Rect2(152, 38, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aees8"]
+atlas = ExtResource("2_8od7v")
+region = Rect2(266, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mie3u"]
+atlas = ExtResource("2_8od7v")
+region = Rect2(38, 38, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qy5o"]
+atlas = ExtResource("2_8od7v")
+region = Rect2(190, 38, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nf3m"]
+atlas = ExtResource("2_8od7v")
+region = Rect2(304, 38, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ocox"]
+atlas = ExtResource("2_8od7v")
+region = Rect2(228, 38, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kuf18"]
+atlas = ExtResource("2_8od7v")
+region = Rect2(114, 38, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8sys"]
+atlas = ExtResource("2_8od7v")
+region = Rect2(266, 38, 38, 38)
 
 [node name="Node" type="Node" unique_id=730165891]
 script = ExtResource("1_lc1oi")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1831868283]
+script = ExtResource("2_35xla")
 
 [node name="PokeInfoContainer" type="MarginContainer" parent="UI" unique_id=478319935]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -459.0
+offset_right = 459.0
+offset_bottom = 411.0
 grow_horizontal = 2
-grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
 
-[node name="HTTPRequest" type="HTTPRequest" parent="." unique_id=1391247772]
+[node name="PokeInfoHBox" type="VBoxContainer" parent="UI/PokeInfoContainer" unique_id=258738443]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 16
 
-[connection signal="request_completed" from="HTTPRequest" to="." method="_on_request_completed"]
+[node name="GeneralDataPanel" type="PanelContainer" parent="UI/PokeInfoContainer/PokeInfoHBox" unique_id=2104707104]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_35xla")
+
+[node name="GeneralDataVBox" type="VBoxContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/GeneralDataPanel" unique_id=1295642790]
+layout_mode = 2
+
+[node name="SearchBar" type="LineEdit" parent="UI/PokeInfoContainer/PokeInfoHBox/GeneralDataPanel/GeneralDataVBox" unique_id=1441114373]
+layout_mode = 2
+placeholder_text = "Search For Pokémon"
+script = ExtResource("3_5wyu1")
+metadata/_custom_type_script = "uid://cxtdun3ap68qx"
+
+[node name="Name" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/GeneralDataPanel/GeneralDataVBox" unique_id=1235770641]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Blissey (Placeholder)"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="HBoxContainer" parent="UI/PokeInfoContainer/PokeInfoHBox" unique_id=1057823701]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="BaseStatsPanel" type="PanelContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer" unique_id=1058575653]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qc4db")
+script = ExtResource("3_i3aeo")
+
+[node name="BaseStatsVBox" type="VBoxContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/BaseStatsPanel" unique_id=51204262]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Header" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/BaseStatsPanel/BaseStatsVBox" unique_id=227871020]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Base Stats"
+horizontal_alignment = 1
+
+[node name="HP" type="HBoxContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/BaseStatsPanel/BaseStatsVBox" unique_id=431510563]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Label" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/BaseStatsPanel/BaseStatsVBox/HP" unique_id=1379301755]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 2
+text = "HP"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Stat" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/BaseStatsPanel/BaseStatsVBox/HP" unique_id=449748845]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+text = "000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/BaseStatsPanel/BaseStatsVBox/HP" unique_id=311099002]
+custom_minimum_size = Vector2(256, 8)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxEmpty_lc1oi")
+theme_override_styles/fill = SubResource("StyleBoxFlat_8od7v")
+max_value = 180.0
+step = 1.0
+value = 180.0
+rounded = true
+allow_greater = true
+show_percentage = false
+
+[node name="MinStat" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/BaseStatsPanel/BaseStatsVBox/HP" unique_id=2081162728]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+text = "000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="MaxStat" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/BaseStatsPanel/BaseStatsVBox/HP" unique_id=196357681]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+text = "000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ATK" type="HBoxContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/BaseStatsPanel/BaseStatsVBox" unique_id=2039697133]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Label" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/BaseStatsPanel/BaseStatsVBox/ATK" unique_id=509881853]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 2
+text = "Attack"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Stat" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/BaseStatsPanel/BaseStatsVBox/ATK" unique_id=412590989]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+text = "000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/BaseStatsPanel/BaseStatsVBox/ATK" unique_id=334886707]
+custom_minimum_size = Vector2(256, 8)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxEmpty_lc1oi")
+theme_override_styles/fill = SubResource("StyleBoxFlat_i3aeo")
+max_value = 180.0
+step = 1.0
+value = 10.0
+rounded = true
+allow_greater = true
+show_percentage = false
+
+[node name="MinStat" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/BaseStatsPanel/BaseStatsVBox/ATK" unique_id=1235177126]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+text = "000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="MaxStat" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/BaseStatsPanel/BaseStatsVBox/ATK" unique_id=1292310309]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+text = "000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="DEF" type="HBoxContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/BaseStatsPanel/BaseStatsVBox" unique_id=1815240189]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Label" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/BaseStatsPanel/BaseStatsVBox/DEF" unique_id=2142953620]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 2
+text = "Defense"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Stat" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/BaseStatsPanel/BaseStatsVBox/DEF" unique_id=1409953035]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+text = "000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/BaseStatsPanel/BaseStatsVBox/DEF" unique_id=271033764]
+custom_minimum_size = Vector2(256, 8)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxEmpty_lc1oi")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5wyu1")
+max_value = 180.0
+step = 1.0
+value = 10.0
+rounded = true
+allow_greater = true
+show_percentage = false
+
+[node name="MinStat" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/BaseStatsPanel/BaseStatsVBox/DEF" unique_id=1561592245]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+text = "000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="MaxStat" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/BaseStatsPanel/BaseStatsVBox/DEF" unique_id=489346204]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+text = "000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SpATK" type="HBoxContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/BaseStatsPanel/BaseStatsVBox" unique_id=402123477]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Label" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/BaseStatsPanel/BaseStatsVBox/SpATK" unique_id=1941808638]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 2
+text = "Sp. Atk"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Stat" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/BaseStatsPanel/BaseStatsVBox/SpATK" unique_id=1215736277]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+text = "000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/BaseStatsPanel/BaseStatsVBox/SpATK" unique_id=1839118854]
+custom_minimum_size = Vector2(256, 8)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxEmpty_lc1oi")
+theme_override_styles/fill = SubResource("StyleBoxFlat_0c07c")
+max_value = 180.0
+step = 1.0
+value = 75.0
+rounded = true
+allow_greater = true
+show_percentage = false
+
+[node name="MinStat" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/BaseStatsPanel/BaseStatsVBox/SpATK" unique_id=950913204]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+text = "000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="MaxStat" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/BaseStatsPanel/BaseStatsVBox/SpATK" unique_id=60399810]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+text = "000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SpDEF" type="HBoxContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/BaseStatsPanel/BaseStatsVBox" unique_id=630495184]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Label" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/BaseStatsPanel/BaseStatsVBox/SpDEF" unique_id=780720648]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 2
+text = "Sp. Def"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Stat" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/BaseStatsPanel/BaseStatsVBox/SpDEF" unique_id=755843846]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+text = "000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/BaseStatsPanel/BaseStatsVBox/SpDEF" unique_id=234838846]
+custom_minimum_size = Vector2(256, 8)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxEmpty_lc1oi")
+theme_override_styles/fill = SubResource("StyleBoxFlat_2cgwh")
+max_value = 180.0
+step = 1.0
+value = 135.0
+rounded = true
+allow_greater = true
+show_percentage = false
+
+[node name="MinStat" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/BaseStatsPanel/BaseStatsVBox/SpDEF" unique_id=1009830996]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+text = "000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="MaxStat" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/BaseStatsPanel/BaseStatsVBox/SpDEF" unique_id=428549078]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+text = "000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SPEED" type="HBoxContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/BaseStatsPanel/BaseStatsVBox" unique_id=699767564]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Label" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/BaseStatsPanel/BaseStatsVBox/SPEED" unique_id=452878298]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 2
+text = "Speed"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Stat" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/BaseStatsPanel/BaseStatsVBox/SPEED" unique_id=1011451091]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+text = "000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/BaseStatsPanel/BaseStatsVBox/SPEED" unique_id=1774930237]
+custom_minimum_size = Vector2(256, 8)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxEmpty_lc1oi")
+theme_override_styles/fill = SubResource("StyleBoxFlat_iaow0")
+max_value = 180.0
+step = 1.0
+value = 55.0
+rounded = true
+allow_greater = true
+show_percentage = false
+
+[node name="MinStat" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/BaseStatsPanel/BaseStatsVBox/SPEED" unique_id=1659105730]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+text = "000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="MaxStat" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/BaseStatsPanel/BaseStatsVBox/SPEED" unique_id=1237616055]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+text = "000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TOTAL" type="HBoxContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/BaseStatsPanel/BaseStatsVBox" unique_id=1322276757]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Label" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/BaseStatsPanel/BaseStatsVBox/TOTAL" unique_id=244545402]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Total"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Stat" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/BaseStatsPanel/BaseStatsVBox/TOTAL" unique_id=1221893399]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 2
+text = "000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Min" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/BaseStatsPanel/BaseStatsVBox/TOTAL" unique_id=1180599178]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Min"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Max" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/BaseStatsPanel/BaseStatsVBox/TOTAL" unique_id=1466261429]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+text = "Max"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TypeEffectivenessPanel" type="PanelContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer" unique_id=2045490035]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_styles/panel = SubResource("StyleBoxFlat_ys1qc")
+script = ExtResource("4_5wyu1")
+
+[node name="TypeEffectivenessVBox" type="VBoxContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel" unique_id=827545573]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Header" type="Label" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox" unique_id=579200862]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Type Defenses"
+
+[node name="TypeChartGrid" type="GridContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox" unique_id=441777597]
+layout_mode = 2
+columns = 9
+
+[node name="NormalType" type="VBoxContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=580069971]
+layout_mode = 2
+
+[node name="TypeIcon" type="TextureRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/NormalType" unique_id=1396794169]
+layout_mode = 2
+texture = SubResource("AtlasTexture_35xla")
+
+[node name="EffectivenessIcon" type="ColorRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/NormalType" unique_id=2050720986]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+
+[node name="FireType" type="VBoxContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=270649076]
+layout_mode = 2
+
+[node name="TypeIcon" type="TextureRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/FireType" unique_id=611083062]
+layout_mode = 2
+texture = SubResource("AtlasTexture_i3aeo")
+
+[node name="EffectivenessIcon" type="ColorRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/FireType" unique_id=994566309]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+
+[node name="WaterType" type="VBoxContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=781865783]
+layout_mode = 2
+
+[node name="TypeIcon" type="TextureRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/WaterType" unique_id=1402463574]
+layout_mode = 2
+texture = SubResource("AtlasTexture_8od7v")
+
+[node name="EffectivenessIcon" type="ColorRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/WaterType" unique_id=1742739027]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+
+[node name="ElectricType" type="VBoxContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=1579105690]
+layout_mode = 2
+
+[node name="TypeIcon" type="TextureRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/ElectricType" unique_id=1785985156]
+layout_mode = 2
+texture = SubResource("AtlasTexture_qc4db")
+
+[node name="EffectivenessIcon" type="ColorRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/ElectricType" unique_id=2043633095]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+
+[node name="GrassType" type="VBoxContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=1508255038]
+layout_mode = 2
+
+[node name="TypeIcon" type="TextureRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/GrassType" unique_id=1219636794]
+layout_mode = 2
+texture = SubResource("AtlasTexture_ys1qc")
+
+[node name="EffectivenessIcon" type="ColorRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/GrassType" unique_id=1235095915]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+
+[node name="IceType" type="VBoxContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=599854890]
+layout_mode = 2
+
+[node name="TypeIcon" type="TextureRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/IceType" unique_id=309699143]
+layout_mode = 2
+texture = SubResource("AtlasTexture_5wyu1")
+
+[node name="EffectivenessIcon" type="ColorRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/IceType" unique_id=1196925982]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+
+[node name="FightingType" type="VBoxContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=816031473]
+layout_mode = 2
+
+[node name="TypeIcon" type="TextureRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/FightingType" unique_id=145402923]
+layout_mode = 2
+texture = SubResource("AtlasTexture_0c07c")
+
+[node name="EffectivenessIcon" type="ColorRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/FightingType" unique_id=1019840249]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+
+[node name="PoisonType" type="VBoxContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=1498239753]
+layout_mode = 2
+
+[node name="TypeIcon" type="TextureRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/PoisonType" unique_id=864222909]
+layout_mode = 2
+texture = SubResource("AtlasTexture_2cgwh")
+
+[node name="EffectivenessIcon" type="ColorRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/PoisonType" unique_id=1256971505]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+
+[node name="GroundType" type="VBoxContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=548720302]
+layout_mode = 2
+
+[node name="TypeIcon" type="TextureRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/GroundType" unique_id=1225927346]
+layout_mode = 2
+texture = SubResource("AtlasTexture_iaow0")
+
+[node name="EffectivenessIcon" type="ColorRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/GroundType" unique_id=785283261]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+
+[node name="FlyingType" type="VBoxContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=1565099692]
+layout_mode = 2
+
+[node name="TypeIcon" type="TextureRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/FlyingType" unique_id=447501311]
+layout_mode = 2
+texture = SubResource("AtlasTexture_qpfo2")
+
+[node name="EffectivenessIcon" type="ColorRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/FlyingType" unique_id=1194709684]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+
+[node name="PsychicType" type="VBoxContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=542716167]
+layout_mode = 2
+
+[node name="TypeIcon" type="TextureRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/PsychicType" unique_id=1404362566]
+layout_mode = 2
+texture = SubResource("AtlasTexture_yb21e")
+
+[node name="EffectivenessIcon" type="ColorRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/PsychicType" unique_id=1046709319]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+
+[node name="BugType" type="VBoxContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=504608981]
+layout_mode = 2
+
+[node name="TypeIcon" type="TextureRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/BugType" unique_id=1505461128]
+layout_mode = 2
+texture = SubResource("AtlasTexture_aees8")
+
+[node name="EffectivenessIcon" type="ColorRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/BugType" unique_id=1279351912]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+
+[node name="RockType" type="VBoxContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=1620665200]
+layout_mode = 2
+
+[node name="TypeIcon" type="TextureRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/RockType" unique_id=520158813]
+layout_mode = 2
+texture = SubResource("AtlasTexture_mie3u")
+
+[node name="EffectivenessIcon" type="ColorRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/RockType" unique_id=1454546724]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+
+[node name="GhostType" type="VBoxContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=429908310]
+layout_mode = 2
+
+[node name="TypeIcon" type="TextureRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/GhostType" unique_id=385001133]
+layout_mode = 2
+texture = SubResource("AtlasTexture_0qy5o")
+
+[node name="EffectivenessIcon" type="ColorRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/GhostType" unique_id=1220167402]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+
+[node name="DragonType" type="VBoxContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=1103272521]
+layout_mode = 2
+
+[node name="TypeIcon" type="TextureRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/DragonType" unique_id=1819343123]
+layout_mode = 2
+texture = SubResource("AtlasTexture_7nf3m")
+
+[node name="EffectivenessIcon" type="ColorRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/DragonType" unique_id=1115407562]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+
+[node name="DarkType" type="VBoxContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=524819698]
+layout_mode = 2
+
+[node name="TypeIcon" type="TextureRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/DarkType" unique_id=879824797]
+layout_mode = 2
+texture = SubResource("AtlasTexture_2ocox")
+
+[node name="EffectivenessIcon" type="ColorRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/DarkType" unique_id=921737389]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+
+[node name="SteelType" type="VBoxContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=1188497473]
+layout_mode = 2
+
+[node name="TypeIcon" type="TextureRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/SteelType" unique_id=1148514916]
+layout_mode = 2
+texture = SubResource("AtlasTexture_kuf18")
+
+[node name="EffectivenessIcon" type="ColorRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/SteelType" unique_id=8659871]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+
+[node name="FairyType" type="VBoxContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=448548678]
+layout_mode = 2
+
+[node name="TypeIcon" type="TextureRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/FairyType" unique_id=1901602083]
+layout_mode = 2
+texture = SubResource("AtlasTexture_q8sys")
+
+[node name="EffectivenessIcon" type="ColorRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/FairyType" unique_id=1981811604]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+
+[node name="Legend" type="RichTextLabel" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox" unique_id=341096205]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_font_sizes/normal_font_size = 8
+text = "Type Chart Legend:
+Scroll For More Info.
+
+RED - 2x Resists
+DARK RED - 4x Resists
+GREEN - 2x Effective
+LIGHT GREEN - 2x Effective
+BLACK - No Effect
+WHITE - Neutral"
+
+[connection signal="text_submitted" from="UI/PokeInfoContainer/PokeInfoHBox/GeneralDataPanel/GeneralDataVBox/SearchBar" to="." method="_on_search_bar_text_submitted"]
