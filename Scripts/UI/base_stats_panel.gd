@@ -92,10 +92,3 @@ func get_stat_color(value: int):
 	else:
 		return BAD_STAT_COLOR
 		
-
-func _on_base_stat_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
-	if response_code == 200:
-		var stat = JSON.parse_string(body.get_string_from_utf8())
-		print(stat["name"])
-	else:
-		print("Failed to complete request!")

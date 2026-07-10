@@ -1,19 +1,56 @@
 extends PanelContainer
 class_name TypeEffectivenessChart
 
+const IMMUNITY_COLOR: Color = Color("2e3436")
+const RESISTANCE_COLOR: Color = Color("a40000")
+const EXTREME_RESISTANCE_COLOR: Color = Color("7c0000")
+const WEAKNESS_COLOR: Color = Color("4e9a06")
+const EXTREME_WEAKNESS_COLOR: Color = Color("73d216")
+const NEUTRAL_COLOR: Color = Color("ffffff")
+
 @onready var type_chart_grid: GridContainer = $TypeEffectivenessVBox/TypeChartGrid
 
 var pokemon_type_urls: Dictionary[String, String] = {}
+var weaknesses: Array[String] = []
+var extreme_weaknesses: Array[String] = []
+var immunities: Array[String] = []
+var resistances: Array[String] = []
+var extreme_resistances: Array[String] = []
 
 func _ready() -> void:
 	pass
 
 func evaluate_type_effectiveness():
+	for weakness in weaknesses:
+		if immunities.has(weakness) or resistances.has(weakness):
+			weaknesses.erase(weakness)
+			resistances.erase(weakness)
+	print("Weaknesses: " + str(weaknesses))
+	print("Extreme Weaknesses: " + str(extreme_weaknesses))
+	print("Resistances: " + str(resistances))
+	print("Extreme Resistances: " + str(extreme_resistances))
+	
 	for type in type_chart_grid.get_children():
-		var icon = type.get_child(0)
-		var effectiveness = type.get_child(1)
+		var type_name = type.name.to_upper().trim_suffix("TYPE") # i.e. NORMALTYPE -> NORMAL
+		var effectiveness: ColorRect = type.get_child(1)
+		effectiveness.color = NEUTRAL_COLOR
+		if weaknesses.has(type_name):
+			effectiveness.color = WEAKNESS_COLOR
+		if extreme_weaknesses.has(type_name):
+			effectiveness.color = EXTREME_WEAKNESS_COLOR
+		if resistances.has(type_name):
+			effectiveness.color = RESISTANCE_COLOR
+		if extreme_resistances.has(type_name):
+			effectiveness.color = EXTREME_RESISTANCE_COLOR
+		if immunities.has(type_name):
+			effectiveness.color = IMMUNITY_COLOR
 
 func setup_types():
+	weaknesses.clear()
+	extreme_weaknesses.clear()
+	resistances.clear()
+	extreme_resistances.clear()
+	immunities.clear()
 	for url in pokemon_type_urls.values():
 		var new_request = HTTPRequest.new()
 		add_child(new_request)
@@ -24,6 +61,21 @@ func setup_types():
 func _on_type_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
 	if response_code == 200:
 		var type = JSON.parse_string(body.get_string_from_utf8())
-		print(type["name"])
+		#print(type["damage_relations"])
+		var double_damage_from: Array = type["damage_relations"]["double_damage_from"]
+		var half_damage_from: Array = type["damage_relations"]["half_damage_from"]
+		var no_damage_from: Array = type["damage_relations"]["no_damage_from"]
+		for weakness in double_damage_from:
+			var weakness_name = weakness["name"].to_upper()
+			if !weaknesses.has(weakness_name): weaknesses.append(weakness_name)
+			else: extreme_weaknesses.append(weakness_name)
+		for resistance in half_damage_from:
+			var resistance_name = resistance["name"].to_upper()
+			if !resistances.has(resistance_name): resistances.append(resistance_name)
+			else: extreme_resistances.append(resistance_name)
+		for immunity in no_damage_from:
+			var immunity_name = immunity["name"].to_upper()
+			if !immunities.has(immunity_name): immunities.append(immunity_name)
+		evaluate_type_effectiveness()
 	else:
 		print("Failed to complete request!")

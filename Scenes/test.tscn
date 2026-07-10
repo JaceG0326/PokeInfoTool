@@ -563,6 +563,7 @@ texture = SubResource("AtlasTexture_35xla")
 [node name="EffectivenessIcon" type="ColorRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/NormalType" unique_id=2050720986]
 custom_minimum_size = Vector2(38, 38)
 layout_mode = 2
+color = Color(0.4862745, 0, 0, 1)
 
 [node name="FireType" type="VBoxContainer" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid" unique_id=270649076]
 layout_mode = 2

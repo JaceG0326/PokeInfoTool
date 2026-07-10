@@ -16,6 +16,8 @@ func _ready() -> void:
 func _on_search_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
 	if response_code == 200:
 		pokemon_data = JSON.parse_string(body.get_string_from_utf8())
+		type_effectiveness_panel.pokemon_type_urls.clear()
+		base_stats_panel.pokemon_base_stats.clear()
 		#print(pokemon_data["abilities"])
 		#print(pokemon_data["types"])
 		var types: Array = pokemon_data["types"]
@@ -31,6 +33,7 @@ func _on_search_completed(result: int, response_code: int, headers: PackedString
 			base_stats_panel.pokemon_base_stats[stat["stat"]["name"]] = int(stat["base_stat"])
 		ui.set_pokemon_basic_info(pokemon_data["name"])
 		base_stats_panel.setup_base_stats()
+		type_effectiveness_panel.setup_types()
 		#print(base_stats_panel.pokemon_base_stat_urls)
 		#print(pokemon_data["stats"])
 		#print(pokemon_data["sprites"])
