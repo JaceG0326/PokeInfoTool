@@ -21,10 +21,18 @@ window/size/viewport_height=540
 window/size/resizable=false
 window/size/minimize_disabled=true
 window/size/maximize_disabled=true
+window/size/window_width_override=960
+window/size/window_height_override=540
+window/stretch/mode="canvas_items"
+window/stretch/scale_mode="integer"
 
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/line_edit_autocomplete_plugin/plugin.cfg")
+
+[gui]
+
+theme/default_font_multichannel_signed_distance_field=true
 
 [physics]
 
@@ -32,6 +40,8 @@ enabled=PackedStringArray("res://addons/line_edit_autocomplete_plugin/plugin.cfg
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=3
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/default_filters/use_nearest_mipmap_filter=true

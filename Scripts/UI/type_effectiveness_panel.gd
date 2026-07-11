@@ -1,11 +1,11 @@
 extends PanelContainer
 class_name TypeEffectivenessChart
 
-const IMMUNITY_COLOR: Color = Color("2e3436")
+const IMMUNITY_COLOR: Color = Color("243136ff")
 const RESISTANCE_COLOR: Color = Color("a40000")
-const EXTREME_RESISTANCE_COLOR: Color = Color("7c0000")
-const WEAKNESS_COLOR: Color = Color("4e9a06")
-const EXTREME_WEAKNESS_COLOR: Color = Color("73d216")
+const EXTREME_RESISTANCE_COLOR: Color = Color("510013ff")
+const WEAKNESS_COLOR: Color = Color("00db21ff")
+const EXTREME_WEAKNESS_COLOR: Color = Color("205d00ff")
 const NEUTRAL_COLOR: Color = Color("ffffff")
 
 @onready var type_chart_grid: GridContainer = $TypeEffectivenessVBox/TypeChartGrid
@@ -33,17 +33,24 @@ func evaluate_type_effectiveness():
 	for type in type_chart_grid.get_children():
 		var type_name = type.name.to_upper().trim_suffix("TYPE") # i.e. NORMALTYPE -> NORMAL
 		var effectiveness: ColorRect = type.get_child(1)
+		var label: Label = effectiveness.get_child(0)
 		effectiveness.color = NEUTRAL_COLOR
+		label.text = "1"
 		if weaknesses.has(type_name):
 			effectiveness.color = WEAKNESS_COLOR
+			label.text = "2"
 		if extreme_weaknesses.has(type_name):
 			effectiveness.color = EXTREME_WEAKNESS_COLOR
+			label.text = "4"
 		if resistances.has(type_name):
 			effectiveness.color = RESISTANCE_COLOR
+			label.text = "1/2"
 		if extreme_resistances.has(type_name):
 			effectiveness.color = EXTREME_RESISTANCE_COLOR
+			label.text = "1/4"
 		if immunities.has(type_name):
 			effectiveness.color = IMMUNITY_COLOR
+			label.text = "0"
 
 func setup_types():
 	weaknesses.clear()
