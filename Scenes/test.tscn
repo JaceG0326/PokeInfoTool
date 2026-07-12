@@ -615,6 +615,8 @@ theme = ExtResource("3_0c07c")
 
 [node name="TypeIcon" type="TextureRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/NormalType" unique_id=1396794169]
 layout_mode = 2
+tooltip_text = "Normal"
+accessibility_name = "Normal Type Icon"
 theme = ExtResource("3_0c07c")
 texture = SubResource("AtlasTexture_35xla")
 
@@ -643,6 +645,8 @@ theme = ExtResource("3_0c07c")
 
 [node name="TypeIcon" type="TextureRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/FireType" unique_id=611083062]
 layout_mode = 2
+tooltip_text = "Fire"
+accessibility_name = "Fire Type Icon"
 theme = ExtResource("3_0c07c")
 texture = SubResource("AtlasTexture_i3aeo")
 
@@ -671,6 +675,8 @@ theme = ExtResource("3_0c07c")
 
 [node name="TypeIcon" type="TextureRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/WaterType" unique_id=1402463574]
 layout_mode = 2
+tooltip_text = "Water"
+accessibility_name = "Water Type Icon"
 theme = ExtResource("3_0c07c")
 texture = SubResource("AtlasTexture_8od7v")
 
@@ -699,6 +705,8 @@ theme = ExtResource("3_0c07c")
 
 [node name="TypeIcon" type="TextureRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/ElectricType" unique_id=1785985156]
 layout_mode = 2
+tooltip_text = "Electric"
+accessibility_name = "Electric Type Icon"
 theme = ExtResource("3_0c07c")
 texture = SubResource("AtlasTexture_qc4db")
 
@@ -727,6 +735,8 @@ theme = ExtResource("3_0c07c")
 
 [node name="TypeIcon" type="TextureRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/GrassType" unique_id=1219636794]
 layout_mode = 2
+tooltip_text = "Grass"
+accessibility_name = "Grass Type Icon"
 theme = ExtResource("3_0c07c")
 texture = SubResource("AtlasTexture_ys1qc")
 
@@ -755,6 +765,8 @@ theme = ExtResource("3_0c07c")
 
 [node name="TypeIcon" type="TextureRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/IceType" unique_id=309699143]
 layout_mode = 2
+tooltip_text = "Ice"
+accessibility_name = "Ice Type Icon"
 theme = ExtResource("3_0c07c")
 texture = SubResource("AtlasTexture_5wyu1")
 
@@ -783,6 +795,8 @@ theme = ExtResource("3_0c07c")
 
 [node name="TypeIcon" type="TextureRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/FightingType" unique_id=145402923]
 layout_mode = 2
+tooltip_text = "Fighting"
+accessibility_name = "Fighting Type Icon"
 theme = ExtResource("3_0c07c")
 texture = SubResource("AtlasTexture_0c07c")
 
@@ -811,6 +825,8 @@ theme = ExtResource("3_0c07c")
 
 [node name="TypeIcon" type="TextureRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/PoisonType" unique_id=864222909]
 layout_mode = 2
+tooltip_text = "Poison"
+accessibility_name = "Poison Type Icon"
 theme = ExtResource("3_0c07c")
 texture = SubResource("AtlasTexture_2cgwh")
 
@@ -839,6 +855,8 @@ theme = ExtResource("3_0c07c")
 
 [node name="TypeIcon" type="TextureRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/GroundType" unique_id=1225927346]
 layout_mode = 2
+tooltip_text = "Ground"
+accessibility_name = "Ground Type Icon"
 theme = ExtResource("3_0c07c")
 texture = SubResource("AtlasTexture_iaow0")
 
@@ -867,6 +885,8 @@ theme = ExtResource("3_0c07c")
 
 [node name="TypeIcon" type="TextureRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/FlyingType" unique_id=447501311]
 layout_mode = 2
+tooltip_text = "Flying"
+accessibility_name = "Flying Type Icon"
 theme = ExtResource("3_0c07c")
 texture = SubResource("AtlasTexture_qpfo2")
 
@@ -895,6 +915,8 @@ theme = ExtResource("3_0c07c")
 
 [node name="TypeIcon" type="TextureRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/PsychicType" unique_id=1404362566]
 layout_mode = 2
+tooltip_text = "Psychic"
+accessibility_name = "Psychic Type Icon"
 theme = ExtResource("3_0c07c")
 texture = SubResource("AtlasTexture_yb21e")
 
@@ -923,6 +945,8 @@ theme = ExtResource("3_0c07c")
 
 [node name="TypeIcon" type="TextureRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/BugType" unique_id=1505461128]
 layout_mode = 2
+tooltip_text = "Bug"
+accessibility_name = "Bug Type Icon"
 theme = ExtResource("3_0c07c")
 texture = SubResource("AtlasTexture_aees8")
 
@@ -951,6 +975,8 @@ theme = ExtResource("3_0c07c")
 
 [node name="TypeIcon" type="TextureRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/RockType" unique_id=520158813]
 layout_mode = 2
+tooltip_text = "Rock"
+accessibility_name = "Rock Type Icon"
 theme = ExtResource("3_0c07c")
 texture = SubResource("AtlasTexture_mie3u")
 
@@ -979,6 +1005,8 @@ theme = ExtResource("3_0c07c")
 
 [node name="TypeIcon" type="TextureRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/GhostType" unique_id=385001133]
 layout_mode = 2
+tooltip_text = "Ghost"
+accessibility_name = "Ghost Type Icon"
 theme = ExtResource("3_0c07c")
 texture = SubResource("AtlasTexture_0qy5o")
 
@@ -1007,6 +1035,8 @@ theme = ExtResource("3_0c07c")
 
 [node name="TypeIcon" type="TextureRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/DragonType" unique_id=1819343123]
 layout_mode = 2
+tooltip_text = "Dragon"
+accessibility_name = "Dragon Type Icon"
 theme = ExtResource("3_0c07c")
 texture = SubResource("AtlasTexture_7nf3m")
 
@@ -1035,6 +1065,8 @@ theme = ExtResource("3_0c07c")
 
 [node name="TypeIcon" type="TextureRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/DarkType" unique_id=879824797]
 layout_mode = 2
+tooltip_text = "Dark"
+accessibility_name = "Dark Type Icon"
 theme = ExtResource("3_0c07c")
 texture = SubResource("AtlasTexture_2ocox")
 
@@ -1063,6 +1095,8 @@ theme = ExtResource("3_0c07c")
 
 [node name="TypeIcon" type="TextureRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/SteelType" unique_id=1148514916]
 layout_mode = 2
+tooltip_text = "Steel"
+accessibility_name = "Steel Type Icon"
 theme = ExtResource("3_0c07c")
 texture = SubResource("AtlasTexture_kuf18")
 
@@ -1091,6 +1125,8 @@ theme = ExtResource("3_0c07c")
 
 [node name="TypeIcon" type="TextureRect" parent="UI/PokeInfoContainer/PokeInfoHBox/VBoxContainer/TypeEffectivenessPanel/TypeEffectivenessVBox/TypeChartGrid/FairyType" unique_id=1901602083]
 layout_mode = 2
+tooltip_text = "Fairy"
+accessibility_name = "Fairy Type Icon"
 theme = ExtResource("3_0c07c")
 texture = SubResource("AtlasTexture_q8sys")
 
@@ -1118,14 +1154,14 @@ custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 size_flags_vertical = 10
 theme = ExtResource("3_0c07c")
-theme_override_font_sizes/normal_font_size = 8
+theme_override_font_sizes/normal_font_size = 16
 text = "Type Chart Legend:
 Scroll For More Info.
 
 RED - 2x Resists
 DARK RED - 4x Resists
 GREEN - 2x Effective
-LIGHT GREEN - 2x Effective
+DARK GREEN - 4x Effective
 BLACK - No Effect
 WHITE - Neutral"
 

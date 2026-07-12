@@ -9,6 +9,7 @@ const EXTREME_WEAKNESS_COLOR: Color = Color("205d00ff")
 const NEUTRAL_COLOR: Color = Color("ffffff")
 
 @onready var type_chart_grid: GridContainer = $TypeEffectivenessVBox/TypeChartGrid
+var api_handler : APIHandler = null
 
 var pokemon_type_urls: Dictionary[String, String] = {}
 var weaknesses: Array[String] = []
@@ -18,7 +19,8 @@ var resistances: Array[String] = []
 var extreme_resistances: Array[String] = []
 
 func _ready() -> void:
-	pass
+	hide()
+	api_handler = get_node_or_null("/root/Main")
 
 func evaluate_type_effectiveness():
 	for weakness in weaknesses:
@@ -51,6 +53,8 @@ func evaluate_type_effectiveness():
 		if immunities.has(type_name):
 			effectiveness.color = IMMUNITY_COLOR
 			label.text = "0"
+	if api_handler != null:
+		api_handler.part_loaded["Type Chart"] = true
 
 func setup_types():
 	weaknesses.clear()
@@ -61,6 +65,7 @@ func setup_types():
 	for url in pokemon_type_urls.values():
 		var new_request = HTTPRequest.new()
 		add_child(new_request)
+		new_request.use_threads = true
 		new_request.request_completed.connect(_on_type_request_completed)
 		new_request.request_completed.connect(new_request.queue_free.unbind(4))
 		new_request.request(url)

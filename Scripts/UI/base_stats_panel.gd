@@ -9,10 +9,12 @@ const AWESOME_STAT_COLOR: Color = Color("23cd5e")
 const OUTSTANDING_STAT_COLOR: Color = Color("00c2b8")
 
 @onready var base_stats_v_box: VBoxContainer = $BaseStatsVBox
+var api_handler : APIHandler = null
 
 var pokemon_base_stats: Dictionary[String, int] = { "hp": 0, "attack": 0, "defense": 0, "special-attack": 0, "special-defense": 0, "speed": 0 }
 
 func _ready() -> void:
+	hide()
 	for base_stat_object in base_stats_v_box.get_children():
 		if base_stat_object is not HBoxContainer: continue
 		if base_stat_object.name == "TOTAL":
@@ -31,6 +33,7 @@ func _ready() -> void:
 		stat_bar.add_theme_stylebox_override("fill", new_stylebox_normal)
 		min_stat.text = str(0)
 		max_stat.text = str(0)
+	api_handler = get_node_or_null("/root/Main")
 
 func setup_base_stats():
 	var total_label: Label = null
@@ -77,6 +80,8 @@ func setup_base_stats():
 		max_stat.text = str(max)
 		bst += base
 	total_label.text = str(bst)
+	if api_handler != null:
+		api_handler.part_loaded["Stats"] = true
 
 func get_stat_color(value: int):
 	if value >= 150:
